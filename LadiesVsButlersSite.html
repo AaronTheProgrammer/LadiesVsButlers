@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Ladies Vs Butlers Light Novel Fan Translations</h1>
+        <h2>On this website, I will post some fan (machine) translations
+            of the light novel series Ladies Vs Butlers. Enjoy!
+        </h2>
+        <h3 id="place">Volume 1 Chapter 1</h3>
+        <div>
+            <span>
+                <button type="button" id="prev" onclick="prev()" disabled="true">Previous Chapter</button>
+                <button type="button" id="next" onclick="next()">Next Chapter</button>
+            </span>
+        </div>
+        <br><br>
+        <object id="thePDF" data="./Volume 1/Chapter 1.pdf" type="application/pdf" width="100%" height="1000px"></object>
+        <script>
+            let vol = 1;
+            let chap = 1;
+
+            function next() {
+                if(!(vol == 13 && chap == 4)) {
+                    if(chap != 3 || vol == 13) {
+                        chap++;
+                    } else if(chap == 3 && vol != 13) {
+                        vol++;
+                        chap = 1;
+                    }
+                    document.getElementById("prev").disabled = false;
+                    document.getElementById("place").innerText = "Volume " + vol + " Chapter " + chap;
+                    document.getElementById("thePDF").data = "./Volume " + vol + "/Chapter " + chap + ".pdf";
+                    if(vol == 13 && chap == 4) {
+                        document.getElementById("next").disabled = true;
+                    }
+                }
+            }
+
+            function prev() {
+                if(!(vol == 1 && chap == 1)) {
+                    if(chap == 1) {
+                        vol--;
+                        chap = 3;
+                    } else {
+                        chap--;
+                    }
+                    document.getElementById("next").disabled = false;
+                    document.getElementById("place").innerText = "Volume " + vol + " Chapter " + chap;
+                    document.getElementById("thePDF").data = "./Volume " + vol + "/Chapter " + chap + ".pdf";
+                    if(vol == 1 && chap == 1) {
+                        document.getElementById("prev").disabled = true;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
