@@ -10,6 +10,49 @@
             <span>
                 <button type="button" id="prev" onclick="prev()" disabled="true">Previous Chapter</button>
                 <button type="button" id="next" onclick="next()">Next Chapter</button>
+                <select name="chapter" id="chapter">
+                    <option value="./Volume 1/Chapter 1.pdf"> Volume 1 Chapter 1</option>
+                    <option value="./Volume 1/Chapter 2.pdf"> Volume 1 Chapter 2</option>
+                    <option value="./Volume 1/Chapter 3.pdf"> Volume 1 Chapter 3</option>
+                    <option value="./Volume 2/Chapter 1.pdf"> Volume 2 Chapter 1</option>
+                    <option value="./Volume 2/Chapter 2.pdf"> Volume 2 Chapter 2</option>
+                    <option value="./Volume 2/Chapter 3.pdf"> Volume 2 Chapter 3</option>
+                    <option value="./Volume 3/Chapter 1.pdf"> Volume 3 Chapter 1</option>
+                    <option value="./Volume 3/Chapter 2.pdf"> Volume 3 Chapter 2</option>
+                    <option value="./Volume 3/Chapter 3.pdf"> Volume 3 Chapter 3</option>
+                    <option value="./Volume 4/Chapter 1.pdf"> Volume 4 Chapter 1</option>
+                    <option value="./Volume 4/Chapter 2.pdf"> Volume 4 Chapter 2</option>
+                    <option value="./Volume 4/Chapter 3.pdf"> Volume 4 Chapter 3</option>
+                    <option value="./Volume 5/Chapter 1.pdf"> Volume 5 Chapter 1</option>
+                    <option value="./Volume 5/Chapter 2.pdf"> Volume 5 Chapter 2</option>
+                    <option value="./Volume 5/Chapter 3.pdf"> Volume 5 Chapter 3</option>
+                    <option value="./Volume 6/Chapter 1.pdf"> Volume 6 Chapter 1</option>
+                    <option value="./Volume 6/Chapter 2.pdf"> Volume 6 Chapter 2</option>
+                    <option value="./Volume 6/Chapter 3.pdf"> Volume 6 Chapter 3</option>
+                    <option value="./Volume 7/Chapter 1.pdf"> Volume 7 Chapter 1</option>
+                    <option value="./Volume 7/Chapter 2.pdf"> Volume 7 Chapter 2</option>
+                    <option value="./Volume 7/Chapter 3.pdf"> Volume 7 Chapter 3</option>
+                    <option value="./Volume 8/Chapter 1.pdf"> Volume 8 Chapter 1</option>
+                    <option value="./Volume 8/Chapter 2.pdf"> Volume 8 Chapter 2</option>
+                    <option value="./Volume 8/Chapter 3.pdf"> Volume 8 Chapter 3</option>
+                    <option value="./Volume 9/Chapter 1.pdf"> Volume 9 Chapter 1</option>
+                    <option value="./Volume 9/Chapter 2.pdf"> Volume 9 Chapter 2</option>
+                    <option value="./Volume 9/Chapter 3.pdf"> Volume 9 Chapter 3</option>
+                    <option value="./Volume 10/Chapter 1.pdf"> Volume 10 Chapter 1</option>
+                    <option value="./Volume 10/Chapter 2.pdf"> Volume 10 Chapter 2</option>
+                    <option value="./Volume 10/Chapter 3.pdf"> Volume 10 Chapter 3</option>
+                    <option value="./Volume 11/Chapter 1.pdf"> Volume 11 Chapter 1</option>
+                    <option value="./Volume 11/Chapter 2.pdf"> Volume 11 Chapter 2</option>
+                    <option value="./Volume 11/Chapter 3.pdf"> Volume 11 Chapter 3</option>
+                    <option value="./Volume 12/Chapter 1.pdf"> Volume 12 Chapter 1</option>
+                    <option value="./Volume 12/Chapter 2.pdf"> Volume 12 Chapter 2</option>
+                    <option value="./Volume 12/Chapter 3.pdf"> Volume 12 Chapter 3</option>
+                    <option value="./Volume 13/Chapter 1.pdf"> Volume 13 Chapter 1</option>
+                    <option value="./Volume 13/Chapter 2.pdf"> Volume 13 Chapter 2</option>
+                    <option value="./Volume 13/Chapter 3.pdf"> Volume 13 Chapter 3</option>
+                    <option value="./Volume 13/Chapter 4.pdf"> Volume 13 Chapter 4</option>
+                </select>
+                <button type="button" onclick="jump()">Jump To Chapter</button>
             </span>
         </div>
         <br><br>
@@ -18,6 +61,22 @@
             let vol = 1;
             let chap = 1;
 
+            function jump() {
+                vol = parseInt(document.getElementById("chapter").value.substring(9, 10));
+                chap = parseInt(document.getElementById("chapter").value.substring(19, 20));
+                document.getElementById("place").innerText = "Volume " + vol + " Chapter " + chap;
+                document.getElementById("thePDF").data = "./Volume " + vol + "/Chapter " + chap + ".pdf";
+                if(vol == 13 && chap == 4) {
+                  document.getElementById("next").disabled = true;
+                } else {
+                  document.getElementById("next").disabled = false;  
+                }
+                if(vol == 1 && chap == 1) {
+                  document.getElementById("prev").disabled = true;
+                } else {
+                  document.getElementById("prev").disabled = false;  
+                }
+            }
             function next() {
                 if(!(vol == 13 && chap == 4)) {
                     if(chap != 3 || vol == 13) {
