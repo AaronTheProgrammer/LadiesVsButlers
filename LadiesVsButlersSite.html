@@ -87,6 +87,7 @@
                     }
                     document.getElementById("prev").disabled = false;
                     document.getElementById("place").innerText = "Volume " + vol + " Chapter " + chap;
+                    document.getElementById("chapter").value = "./Volume " + vol + "/Chapter " + chap + ".pdf";
                     document.getElementById("thePDF").data = "./Volume " + vol + "/Chapter " + chap + ".pdf";
                     if(vol == 13 && chap == 4) {
                         document.getElementById("next").disabled = true;
@@ -104,6 +105,7 @@
                     }
                     document.getElementById("next").disabled = false;
                     document.getElementById("place").innerText = "Volume " + vol + " Chapter " + chap;
+                    document.getElementById("chapter").value = "./Volume " + vol + "/Chapter " + chap + ".pdf";
                     document.getElementById("thePDF").data = "./Volume " + vol + "/Chapter " + chap + ".pdf";
                     if(vol == 1 && chap == 1) {
                         document.getElementById("prev").disabled = true;
