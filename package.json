@@ -1,12 +1,12 @@
 {
   "name": "ladiesvsbutlerssite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Read decent machine translations of the light novel series Ladies Vs Butlers",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["Ladies vs Butlers, Light Novel, Translations"],
   "author": "",
   "license": "ISC",
   "dependencies": {
