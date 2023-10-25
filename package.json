@@ -4,7 +4,7 @@
   "description": "Read decent machine translations of the light novel series Ladies Vs Butlers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "Ladies vs Butlers, Light Novel, Translations"
