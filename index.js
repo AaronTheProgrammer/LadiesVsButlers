@@ -6,9 +6,8 @@ const app = express();
 
 
 app.use(serveStatic(path.join(__dirname, 'views')));
-app.get('https://ladies-vs-butlers-light-novel-fan-translations.vercel.app/', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname  + '/views/LadiesVsButlersSite.html');
-   //res.sendFile("http://localhost:8080/views/LadiesVsButlersSite.html");
 });
 
 
